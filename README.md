@@ -1,8 +1,8 @@
-# YouTube Trending Data Pipeline
-
+# Serverless Multi-Region YouTube Analytics Lakehouse using AWS Glue, Lambda & Athena
+ Serverless Multi-Region YouTube Analytics Lakehouse using AWS Glue, Lambda & Athena
 A cloud-native ETL pipeline that ingests YouTube trending video data across 10 regions, transforms it through a medallion architecture (Bronze > Silver > Gold), enforces data quality gates, and produces analytics-ready aggregations — all orchestrated by AWS Step Functions.
 
-![Architecture Diagram](YouTube%20Trending%20Data%20Pipeline.png)
+![Architecture Diagram](pipeline.jpeg)
 
 ---
 
@@ -29,6 +29,26 @@ A cloud-native ETL pipeline that ingests YouTube trending video data across 10 r
 
 ---
 
+## Business Problem Statement
+
+Millions of videos are uploaded to YouTube every day, making it difficult for content creators, marketers, and analysts to understand what content is trending globally and how audience engagement differs across regions.
+
+Most publicly available datasets are static snapshots that quickly become outdated and cannot support continuous analytics.
+
+This project solves that challenge by building an automated cloud-based analytics platform that:
+
+Continuously collects trending video data from multiple countries
+Cleans and standardizes data from heterogeneous sources
+Applies data quality controls before analytics generation
+Produces business-ready datasets for reporting and decision making
+Enables trend analysis across regions, categories, and channels
+
+The platform allows organizations to identify:
+
+Which content categories are gaining popularity
+Which creators consistently dominate trending charts
+How engagement varies between countries
+Emerging content trends before they become mainstream
 ## Overview
 
 This pipeline automates the end-to-end process of collecting, cleaning, and analyzing YouTube trending video data. It replaces manual Kaggle dataset downloads with live YouTube Data API v3 integration and produces three sets of business analytics tables:
@@ -440,5 +460,3 @@ LIMIT 10;
 
 - **YouTube Data API v3** — live trending video data (primary)
 - **Kaggle YouTube Trending Dataset** — historical data for backfill and testing
-#   Y T - A W S  
- 
